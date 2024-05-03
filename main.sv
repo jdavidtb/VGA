@@ -33,8 +33,8 @@ module vga_design(
 
     screen_ram video_memory (
         .clk(clk),
-        .we(1'b0), // Ejemplo sin escritura
-        .addr(pixel_y * 80 + pixel_x / 8), // Ajustar según dimensiones
+        .we(1'b0),
+        .addr(pixel_y * 80 + pixel_x / 8), 
         .data_in(8'b0), 
         .data_out(data_from_ram)
     );
