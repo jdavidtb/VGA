@@ -1,3 +1,8 @@
+`include "vga_sync.sv"
+`include "textmode.sv"
+`include "screen_ram.sv"
+`include "char_position.sv"
+
 module vga_design(
      input clk,           // Reloj del sistema
     input reset,         // Reset global
@@ -33,7 +38,7 @@ module vga_design(
 
     screen_ram video_memory (
         .clk(clk),
-        .we(1'b0),
+        .we(1'b0), // Ejemplo sin escritura
         .addr(pixel_y * 80 + pixel_x / 8), 
         .data_in(8'b0), 
         .data_out(data_from_ram)
