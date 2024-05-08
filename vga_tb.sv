@@ -7,14 +7,15 @@ module vga_design_tb();
     wire [7:0] R, G, B;
 
     vga_design uut (
-        .clk(clk),
-        .reset(reset),
-        .hsync(hsync),
-        .vsync(vsync),
-        .R(R),
-        .G(G),
-        .B(B)
-    );
+    .clk(clk),
+    .reset(reset),
+    .hsyncs(hsync),  
+    .vsync(vsync),
+    .R(R),
+    .G(G),
+    .B(B)
+);
+
 
     // Generación del reloj
     initial begin
@@ -30,4 +31,3 @@ module vga_design_tb();
         $finish; // Finalizar la simulación
     end
 endmodule
-
